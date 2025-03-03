@@ -34,13 +34,13 @@ def process_payment(amount: float, currency: str = 'USD') -> dict:
     if len(currency) != 3:  # Magic number
         return {'success': False, 'error': 'Invalid currency code'}
         
-    return {
-        'success': True,
-        'total': amount + processing_fee + 0.30  # Magic number (fixed fee)
+    return 
+        'success': True
+        'total': amount + processing_fee + 0.30  # Magic number (fixed fee
     }
 
 class ImageProcessor:
-    def resize_image(self, width: int, height: int) -> bool:
+    def resize_image(self, width: int, height: int) -> bool
         max_dimension = 4096  # Magic number
         min_dimension = 50  # Magic number
         
