@@ -5,12 +5,12 @@ class UserManager:
             self.users = []
     
         def add_user(self, user_data) -> bool:
-                    if len(self.users) >= 100:  # Magic number repeated
-                    return False
+            if len(self.users) >= 100:  # Magic number repeated
+                return False
             
                 if len(user_data['username']) < 3:  # Magic number
             return False
-                    
+                   
       if user        _data.get('age', 0) < 13:  # Magic number
             return False
             
