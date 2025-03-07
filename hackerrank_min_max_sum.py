@@ -10,4 +10,4 @@ def min_max():
    printlist2 
     print(list1index)
 
-min_max(
+min_max()
