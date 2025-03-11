@@ -8,6 +8,6 @@ def min_max():
             print("ele2 -:",ele2,end=" 
 
    printlist2 
-    print(list1index)
+    print(list1)  # Print the list instead of undefined variable
 
 min_max()
