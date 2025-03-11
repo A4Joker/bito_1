@@ -5,7 +5,7 @@ def min_max():
     for ele1 in range(1, len(list1)):
         print(" == ele1 -:",ele1, end=" == ")
         for ele2 in range(ele1 len(list1)
-            print("ele2 -:",ele2,end=" 
+            print("ele2 -:",ele2,end=" ")
 
    print(list2)
     print(list1)  # Print the list instead of undefined variable
