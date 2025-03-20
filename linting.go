@@ -1,7 +1,7 @@
-// Package naming doesn't match directory
+Package naming doesn't match directory
 package main
 
-// Unused imports
+ Unused imports
 import (
     "fmt"
     "log"
