@@ -109,8 +109,16 @@ func fetchData(url string) (*UserData, error) {
 // Channel operations without select
 func processChannel(ch chan string) {
     // Potential deadlock
-    msg := <-ch
-    ch <- "processed"
+    select {
+    case msg := <-ch:
+        // Process the message
+        go func() {
+            // Send response in a separate goroutine
+            ch <- "processed"
+        }()
+    default:
+        // Handle case when channel is empty
+    }
 }
 
 // Goroutine without waitgroup
