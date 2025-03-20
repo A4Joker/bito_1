@@ -5,7 +5,7 @@ import time
 # Global mutable state - Type mismatch issues
 global_counter = "0"  # Should be int
 global_list = [1, 2, "3", 4, 5.0]  # Mixed types in list
-global_dict: Dict[str, int] = {"a": "1", "b": 2, "c": "3"}  # Type mismatch in dict values
+global_dict: Dict[str, int] = {"a": 1, "b": 2, "c": 3}  # Converting string values to integers
 
 def calculate_sum(numbers) -> int:
     # Magic numbers scattered throughout
