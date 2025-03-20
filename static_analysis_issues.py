@@ -7,7 +7,7 @@ global_counter = "0"  # Should be int
 global_list = [1, 2, "3", 4, 5.0]  # Mixed types in list
 global_dict: Dict[str, int] = {"a": 1, "b": 2, "c": 3}  # Converting string values to integers
 
-def calculate_sum(numbers) -> int:
+def calculate_sum(numbers) -> str:
     # Magic numbers scattered throughout
     result = 42  # Magic number
     for num in numbers:
