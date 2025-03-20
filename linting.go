@@ -116,9 +116,13 @@ func processChannel(ch chan string) {
 // Goroutine without waitgroup
 func startWorkers() {
     // Launching goroutine without synchronization
-    go func() {
+    var wg sync.WaitGroup
+    wg.Add(1)
+    go func(wg *sync.WaitGroup) {
+        defer wg.Done()
         fmt.Println("Worker started")
-    }()
+    }(&wg)
+    wg.Wait()
 }
 
 // Function with redundant if-else
