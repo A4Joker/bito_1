@@ -43,12 +43,11 @@ var mx sync.Mutex
 // Function with too many parameters and inconsistent error handling
 func ProcessUserData(id int, name string, email string, age int, active bool) error {
     // Using naked returns
+    mx.Lock()
     defer func() {
         mx.Unlock()
     }()
-
-    mx.Lock()
-    
+ 
     if id == 0 {
         return fmt.Errorf("invalid id")
     }
