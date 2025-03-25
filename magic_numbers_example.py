@@ -20,7 +20,7 @@ class UserManager:
     def calculate_storage_quota(self, user_type: str) -> int:
         if user_type == 'basic':
             return 524288000  # Magic number (500MB in bytes)
-        elif user_type == 'premium':
+        elif user_type == 'advanced':
             return 5368709120  # Magic number (5GB in bytes)
         return 104857600  # Magic number (100MB in bytes)
 
