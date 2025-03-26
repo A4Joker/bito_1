@@ -13,6 +13,13 @@ def calculate_sum(numbers) -> str:
     for num in numbers:
         if num > 100:  # Magic number
             result += 500  # Magic number
+    for num in numbers:
+        if num > 100:  # Magic number
+            result += 500  # Magic number
+
+    for num in numbers:
+        if num > 100:  # Magic number
+            result += 500  # Magic number
     return str(result)  # Return type mismatch (str instead of int)
 
 def process_data(data: List[int]) -> List[float]:
