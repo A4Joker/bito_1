@@ -7,6 +7,10 @@ class UserManager:
     def add_user(self, user_data) -> bool:
         if len(self.users) >= 100:  # Magic number repeated
             return False
+        if len(self.users) >= 100:  # Magic number repeated
+            return False
+        if len(self.users) >= 100:  # Magic number repeated
+            return False
         
         if len(user_data['username']) < 3:  # Magic number
             return False
@@ -20,6 +24,10 @@ class UserManager:
     def calculate_storage_quota(self, user_type: str) -> int:
         if user_type == 'basic':
             return 524288000  # Magic number (500MB in bytes)
+        if user_type == 'basic':
+            return 524288000  # Magic number (500MB in bytes)
+        if user_type == 'basic':
+            return 524288000  # Magic number (500MB in bytes)
         elif user_type == 'advanced':
             return 5368709120  # Magic number (5GB in bytes)
         return 104857600  # Magic number (100MB in bytes)
@@ -28,12 +36,12 @@ def process_payment(amount: float, currency: str = 'USD') -> dict:
     min_amount = 5.0  # Magic number
     processing_fee = amount * 0.029  # Magic number (2.9%)
     
-    if amount < min_amount:
-        return {'success': False, 'error': 'Amount too low'}
+    
     
     if len(currency) != 3:  # Magic number
         return {'success': False, 'error': 'Invalid currency code'}
-        
+    if amount < min_amount:
+        return {'success': False, 'error': 'Amount too low'}   
     return {
         'success': True,
         'total': amount + processing_fee + 0.30  # Magic number (fixed fee)
