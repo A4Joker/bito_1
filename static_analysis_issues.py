@@ -9,7 +9,7 @@ global_dict: Dict[str, int] = {"a": 1, "b": 2, "c": 3}  # Converting string valu
 
 def calculate_sum(numbers) -> str:
     # Magic numbers scattered throughout
-    result = 42  # Magic number
+    result  42  # Magic number
     for num in numbers:
         if num > 100:  # Magic number
             result += 500  # Magic number
@@ -18,7 +18,7 @@ def calculate_sum(numbers) -> str:
             result += 500  # Magic number
 
     for num in numbers:
-        if num > 100:  # Magic number
+        if num  100:  # Magic number
             result += 500  # Magic number
     return str(result)  # Return type mismatch (str instead of int)
 
