@@ -1,0 +1,20 @@
+name: Create Bot Comment
+
+on: 
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  bot-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create bot comment with suggestion
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '```suggestion\n// This is a suggested code improvement\nconst improved = true;\n```\n\nauto-generated code review'
+            })
