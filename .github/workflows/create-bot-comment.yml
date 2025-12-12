@@ -18,31 +18,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const body = `<div>
-<div id="suggestion">
-<div id="issue"><b>Exposed DB credentials</b></div>
-<div id="fix">
-Database credentials are hardcoded in plain text, making them vulnerable to exposure and unauthorized database access. This is a critical security flaw that could lead to data breaches. Store these in environment variables or a configuration file outside version control.
-</div>
-<details>
-<summary>
-<b>Code suggestion</b>
-</summary>
-<blockquote>Check the AI-generated fix before applying</blockquote>
-<div id="code">
-\`\`\`\`suggestion
-# 🔴 VIOLATION 1.2: Hardcoded Database Credentials
-DB_HOST = os.environ.get('DB_HOST')
-DB_USER = os.environ.get('DB_USER')
-DB_PASSWORD = os.environ.get('DB_PASSWORD')
-DB_NAME = os.environ.get('DB_NAME')
-\`\`\`\`
-</div>
-</details>
-</div>
-<small><i>Code Review Run <a href=https://github.com/A4Joker/Bito_Test/pull/304#issuecomment-3581407382>#c29c28</a></i></small>
-</div>`;
-
+            const body = '<div>\n<div id="suggestion">\n<div id="issue"><b>Exposed DB credentials</b></div>\n<div id="fix">\nDatabase credentials are hardcoded in plain text, making them vulnerable to exposure and unauthorized database access. This is a critical security flaw that could lead to data breaches. Store these in environment variables or a configuration file outside version control.\n</div>\n<details>\n<summary>\n<b>Code suggestion</b>\n</summary>\n<blockquote>Check the AI-generated fix before applying</blockquote>\n<div id="code">\n```suggestion\n# 🔴 VIOLATION 1.2: Hardcoded Database Credentials\nDB_HOST = os.environ.get(\'DB_HOST\')\nDB_USER = os.environ.get(\'DB_USER\')\nDB_PASSWORD = os.environ.get(\'DB_PASSWORD\')\nDB_NAME = os.environ.get(\'DB_NAME\')\n```\n</div>\n</details>\n</div>\n<small><i>Code Review Run <a href="https://github.com/A4Joker/Bito_Test/pull/304#issuecomment-3581407382">#c29c28</a></i></small>\n</div>';
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
