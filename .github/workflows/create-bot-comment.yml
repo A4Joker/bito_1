@@ -18,6 +18,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const fs = require('fs');
             const body = `<div>
 <div id="suggestion">
 <div id="issue"><b>Exposed DB credentials</b></div>
@@ -44,9 +45,9 @@ DB_NAME = os.environ.get('DB_NAME')
 </div>
 <small><i>Code Review Run <a href="https://github.com/A4Joker/Bito_Test/pull/304#issuecomment-3581407382">#c29c28</a></i></small>
 </div>`;
-            github.rest.issues.createComment({
+            await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: body
-            })
+            });
