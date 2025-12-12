@@ -18,26 +18,18 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `<div>
-
+            const body = `<div>
 <div id="suggestion">
 <div id="issue"><b>Exposed DB credentials</b></div>
 <div id="fix">
-
 Database credentials are hardcoded in plain text, making them vulnerable to exposure and unauthorized database access. This is a critical security flaw that could lead to data breaches. Store these in environment variables or a configuration file outside version control.
 </div>
-
 <details>
 <summary>
 <b>Code suggestion</b>
 </summary>
 <blockquote>Check the AI-generated fix before applying</blockquote>
 <div id="code">
-
 \`\`\`\`suggestion
 # 🔴 VIOLATION 1.2: Hardcoded Database Credentials
 DB_HOST = os.environ.get('DB_HOST')
@@ -45,12 +37,15 @@ DB_USER = os.environ.get('DB_USER')
 DB_PASSWORD = os.environ.get('DB_PASSWORD')
 DB_NAME = os.environ.get('DB_NAME')
 \`\`\`\`
-
 </div>
 </details>
-
 </div>
-
 <small><i>Code Review Run <a href=https://github.com/A4Joker/Bito_Test/pull/304#issuecomment-3581407382>#c29c28</a></i></small>
-</div>`
+</div>`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
             })
